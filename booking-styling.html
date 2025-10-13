@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Style | Layna's Hair Salon</title>
+    <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #f6f2ef, #e4d3c2);
+      color: #222;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(17, 17, 17, 0.9);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 24px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      z-index: 10;
+    }
+
+    nav h1 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 6px;
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.15);
+    }
+
+    .container {
+      flex: 1;
+      margin-top: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .calendly-inline-widget {
+      width: 100%;
+      max-width: 800px;
+      height: 750px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+    }
+  </style>
+  </head>
+  <body>
+    <nav>
+      <h1>Layna's Hair Salon</h1>
+      <a href="index.html">← Back to Services</a>
+    </nav>
+
+    <div class="container">
+      <!-- Calendly inline widget begin -->
+      <div class="calendly-inline-widget"
+        data-url="https://calendly.com/laynashairsalon/styling?hide_gdpr_banner=1"
+        style="min-width:320px;height:700px;"></div>
+      <script type="text/javascript"
+        src="https://assets.calendly.com/assets/external/widget.js"
+        async></script>
+      <!-- Calendly inline widget end -->
+    </div>
+  </body>
+</html>

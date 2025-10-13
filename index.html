@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laynas Salon</title>
+  <title>Layna's Hair Salon</title>
   <style>
     * {
       box-sizing: border-box;
@@ -23,41 +23,47 @@
 
     .hero {
       text-align: center;
-      animation: fadeIn 1.5s ease;
     }
 
     .hero h1 {
       font-size: 3rem;
       font-weight: 600;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       color: #2b2b2b;
-      letter-spacing: 1px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
     }
 
     .button {
-      padding: 18px 48px;
+      padding: 16px 42px;
       font-size: 1.2rem;
       background-color: #111;
       color: white;
       border: none;
       border-radius: 50px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+      width: 240px;
     }
 
     .button:hover {
       background-color: #444;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
     }
-
   </style>
 </head>
 <body>
   <div class="hero">
     <h1>Layna's Hair Salon</h1>
-    <button class="button" onclick="window.location.href='booking.html'">Book a Haircut</button>
+    <div class="button-container">
+      <button class="button" onclick="window.location.href='booking-haircut.html'">Haircut</button>
+      <button class="button" onclick="window.location.href='booking-color.html'">Hair Coloring</button>
+      <button class="
+      button" onclick="window.location.href='booking-styling.html'">Styling Session</button>
+    </div>
   </div>
 </body>
 </html>
