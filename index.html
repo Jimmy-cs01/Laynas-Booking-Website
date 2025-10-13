@@ -1,35 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Hair Studio</title>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      height: 100vh;
+      background: linear-gradient(135deg, #f0ebe6, #e5d4c0);
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background-color: #fafafa;
-      margin: 0;
+      font-family: "Poppins", sans-serif;
+      color: #222;
     }
+
+    .hero {
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      margin-bottom: 30px;
+      color: #2b2b2b;
+      letter-spacing: 1px;
+    }
+
     .button {
-      padding: 20px 40px;
-      font-size: 24px;
-      background-color: #000;
+      padding: 18px 48px;
+      font-size: 1.2rem;
+      background-color: #111;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 50px;
       cursor: pointer;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
     }
+
     .button:hover {
       background-color: #444;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
     }
+
   </style>
 </head>
 <body>
-  <button class="button" onclick="window.location.href='booking.html'">Haircut</button>
+  <div class="hero">
+    <h1>Welcome to Your Hair Studio</h1>
+    <button class="button" onclick="window.location.href='booking.html'">Book a Haircut</button>
+  </div>
 </body>
 </html>
