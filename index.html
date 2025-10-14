@@ -13,7 +13,7 @@
 
     body {
       height: 100vh;
-      background: linear-gradient(135deg, #f0ebe6, #e5d4c0);
+      background: linear-gradient(135deg, #f9f5f2, #e8d7c7);
       display: flex;
       justify-content: center;
       align-items: center;
@@ -23,6 +23,7 @@
 
     .hero {
       text-align: center;
+      max-width: 500px;
     }
 
     .hero h1 {
@@ -53,17 +54,24 @@
     .button:hover {
       background-color: #444;
     }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9rem;
+      color: #555;
+    }
   </style>
 </head>
 <body>
   <div class="hero">
     <h1>Layna's Hair Salon</h1>
     <div class="button-container">
-      <button class="button" onclick="window.location.href='booking-haircut.html'">Haircut</button>
-      <button class="button" onclick="window.location.href='booking-color.html'">Hair Coloring</button>
-      <button class="
-      button" onclick="window.location.href='booking-styling.html'">Styling Session</button>
+      <button class="button" onclick="window.location.href='book-online.html'">Book Online</button>
+      <button class="button" onclick="window.location.href='about.html'">About Me</button>
+      <button class="button" onclick="window.location.href='portfolio.html'">Portfolio</button>
     </div>
   </div>
+  <footer>© 2025 Layna's Hair Salon</footer>
 </body>
 </html>
