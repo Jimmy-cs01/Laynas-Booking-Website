@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Online | Layna's Hair Salon</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #222;
+      background: linear-gradient(135deg, #f9f5f2, #e8d7c7);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2b2b2b;
+      color: white;
+      padding: 15px 50px;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #f0c8a0;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px 30px;
+    }
+
+    header h2 {
+      font-size: 2.8rem;
+      color: #2b2b2b;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .widget-container {
+      width: 90%;
+      max-width: 900px;
+      margin: 40px auto 60px;
+      background: #fff;
+      border-radius: 30px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      flex: 1;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      color: #555;
+      background: transparent;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      header h2 {
+        font-size: 2rem;
+      }
+
+      .widget-container {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>Layna's Hair Salon</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="book-online.html">Book Online</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h2>Book an Appointment</h2>
+    <p>Reserve your spot and pay securely online or in person — quick and easy.</p>
+  </header>
+
+  <div class="widget-container">
+    <!-- Start Square Appointments Embed Code -->
+    <script src='https://square.site/appointments/buyer/widget/f5x6idu4mt4ehm/LBKGD7WKE51YD.js'></script>
+    <!-- End Square Appointments Embed Code -->
+  </div>
+
+  <footer>© 2025 Layna's Hair Salon</footer>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Layna's Hair Salon</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #222;
+      background: #fdfaf7;
+    }
+
+    /* Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #2b2b2b;
+      color: white;
+      padding: 15px 50px;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #f0c8a0;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background: linear-gradient(135deg, #f9f5f2, #e8d7c7);
+    }
+
+    header h2 {
+      font-size: 2.8rem;
+      color: #2b2b2b;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #555;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 60px 10%;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 25px 0;
+      color: #555;
+      background-color: #f3e9e1;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      header h2 {
+        font-size: 2rem;
+      }
+
+      .gallery {
+        padding: 40px 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <h1>Layna's Hair Salon</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="book-online.html">Book Online</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h2>Portfolio</h2>
+    <p>Explore some of our favorite looks and transformations.</p>
+  </header>
+
+  <section class="gallery">
+    <!-- Replace these jpeg links with your own image files -->
+    <img src="../images/style1.jpeg" alt="Hairstyle 1" />
+    <img src="../images/style2.jpeg" alt="Hairstyle 2" />
+    <img src="../images/style3.jpeg" alt="Hairstyle 3" />
+    <img src="../images/style4.jpeg" alt="Hairstyle 4" />
+    <img src="../images/style5.jpeg" alt="Hairstyle 5" />
+    <img src="../images/style6.jpeg" alt="Hairstyle 6" />
+  </section>
+
+  <footer>© 2025 Layna's Hair Salon</footer>
+</body>
+</html>
