@@ -4,141 +4,135 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio | Layna's Hair Salon</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    .gallery-grid {
+      padding: 0 2px 80px;
+      columns: 3;
+      column-gap: 2px;
     }
 
-    body {
-      font-family: "Poppins", sans-serif;
-      color: #222;
-      background: #fdfaf7;
-    }
-
-    /* Navigation Bar */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #2b2b2b;
-      color: white;
-      padding: 15px 50px;
-    }
-
-    nav h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #f0c8a0;
-    }
-
-    /* Header */
-    header {
-      text-align: center;
-      padding: 80px 20px 40px;
-      background: linear-gradient(135deg, #f9f5f2, #e8d7c7);
-    }
-
-    header h2 {
-      font-size: 2.8rem;
-      color: #2b2b2b;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #555;
-    }
-
-    /* Gallery Section */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      padding: 60px 10%;
-    }
-
-    .gallery img {
+    .gallery-grid img {
       width: 100%;
-      border-radius: 20px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: block;
+      margin-bottom: 2px;
+      break-inside: avoid;
+      filter: brightness(0.88);
+      transition: filter 0.4s ease, transform 0.4s ease;
+      cursor: zoom-in;
     }
 
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    .gallery-grid img:hover {
+      filter: brightness(1);
+      transform: scale(1.01);
+      z-index: 1;
+      position: relative;
     }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 25px 0;
-      color: #555;
-      background-color: #f3e9e1;
-      font-size: 0.9rem;
-      margin-top: 40px;
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
     }
 
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 10px;
-      }
+    .lightbox.active { display: flex; }
 
-      header h2 {
-        font-size: 2rem;
-      }
+    .lightbox img {
+      max-width: 90vw;
+      max-height: 90vh;
+      object-fit: contain;
+      border: 1px solid var(--border);
+    }
 
-      .gallery {
-        padding: 40px 5%;
-      }
+    .lightbox-close {
+      position: fixed;
+      top: 24px;
+      right: 32px;
+      font-size: 0.6rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      cursor: pointer;
+      background: none;
+      border: none;
+      transition: color 0.2s;
+    }
+
+    .lightbox-close:hover { color: var(--text); }
+
+    @media (max-width: 768px) {
+      .gallery-grid { columns: 2; }
+    }
+
+    @media (max-width: 480px) {
+      .gallery-grid { columns: 1; }
     }
   </style>
 </head>
 <body>
   <nav>
-    <h1>Layna's Hair Salon</h1>
+    <a href="index.html" class="logo">Layna's Hair Salon</a>
     <ul>
       <li><a href="index.html">Home</a></li>
-      <li><a href="book-online.html">Book Online</a></li>
-      <li><a href="about.html">About Me</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="book-online.html" class="nav-cta">Book Now</a></li>
     </ul>
   </nav>
 
-  <header>
-    <h2>Portfolio</h2>
-    <p>Explore some of our favorite looks and transformations.</p>
-  </header>
+  <div class="page-header">
+    <h1>Portfolio</h1>
+    <p>Transformations &amp; looks</p>
+    <div class="accent-line"></div>
+  </div>
 
-  <section class="gallery">
-    <!-- Replace these jpeg links with your own image files -->
-    <img src="../images/style1.jpeg" alt="Hairstyle 1" />
-    <img src="../images/style2.jpeg" alt="Hairstyle 2" />
-    <img src="../images/style3.jpeg" alt="Hairstyle 3" />
-    <img src="../images/style4.jpeg" alt="Hairstyle 4" />
-    <img src="../images/style5.jpeg" alt="Hairstyle 5" />
-    <img src="../images/style6.jpeg" alt="Hairstyle 6" />
-  </section>
+  <div class="gallery-grid" id="gallery"></div>
+
+  <script>
+    // ── CONFIG: bump this number whenever you add more images ──
+    const TOTAL_IMAGES = 25;
+    const IMAGE_DIR = '../images/';
+    // ──────────────────────────────────────────────────────────
+
+    const gallery = document.getElementById('gallery');
+
+    for (let i = 1; i <= TOTAL_IMAGES; i++) {
+      const img = document.createElement('img');
+      img.src = `${IMAGE_DIR}style${i}.jpeg`;
+      img.alt = `Hairstyle ${i}`;
+      img.loading = 'lazy';
+      // silently drop any missing images so gaps don't appear
+      img.onerror = function() { this.remove(); };
+      img.addEventListener('click', () => {
+        lbImg.src = img.src;
+        lbImg.alt = img.alt;
+        lb.classList.add('active');
+      });
+      gallery.appendChild(img);
+    }
+  </script>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lb-close">Close ✕</button>
+    <img src="" id="lb-img" alt="" />
+  </div>
 
   <footer>© 2025 Layna's Hair Salon</footer>
+
+  <script>
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const lbClose = document.getElementById('lb-close');
+
+    lbClose.addEventListener('click', () => lb.classList.remove('active'));
+    lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('active'); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('active'); });
+  </script>
 </body>
 </html>

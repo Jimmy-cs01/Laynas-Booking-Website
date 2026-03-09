@@ -4,212 +4,267 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Layna's Hair Salon</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 72px;
     }
 
-    body {
-      font-family: "Poppins", sans-serif;
-      color: #222;
-      background: #fdfaf7;
+    .hero-left {
       display: flex;
       flex-direction: column;
-      min-height: 100vh;
+      justify-content: center;
+      padding: 80px 64px;
     }
 
-    /* Navigation Bar */
-    nav {
+    .hero-eyebrow {
+      font-size: 0.6rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 28px;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 5.5vw, 7rem);
+      font-weight: 300;
+      line-height: 1.02;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      margin-bottom: 36px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-sub {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      line-height: 1.9;
+      color: var(--muted);
+      max-width: 340px;
+      margin-bottom: 48px;
+    }
+
+    .hero-actions {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #2b2b2b;
-      color: white;
-      padding: 15px 50px;
-    }
-
-    nav h1 {
-      font-size: 1.5rem;
-      font-weight: 600;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 25px;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #f0c8a0;
-    }
-
-    /* Header Section: Title + Image Side-by-Side */
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(135deg, #f9f5f2, #e8d7c7);
-      padding: 60px 8%;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
-    .header-text {
-      flex: 1;
-      min-width: 250px;
+    .hero-right {
+      position: relative;
+      overflow: hidden;
     }
 
-    .header-text h2 {
-      font-size: 3rem;
-      color: #2b2b2b;
-      margin-bottom: 15px;
-    }
-
-    .header-text p {
-      font-size: 1.2rem;
-      color: #555;
-      max-width: 400px;
-      line-height: 1.7;
-    }
-
-    .header-image {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .header-image img {
+    .hero-right img {
       width: 100%;
-      max-width: 400px;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.85);
     }
 
-    /* Mission Statement */
-.mission {
-  max-width: 800px;
-  margin: 60px auto;
-  text-align: center;
-  padding: 0 20px;
-  background: none; /* no white box */
-  box-shadow: none;
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin: 50px 0;
-  flex-wrap: wrap;
-  background: none; /* keep transparent */
-}
-
-    .mission h3 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #2b2b2b;
+    .hero-right::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--bg) 0%, transparent 20%);
     }
 
-    .mission p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      color: #444;
+    /* ── SERVICES STRIP ── */
+    .services-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--border);
     }
 
-    /* Buttons */
-    .button-container {
-      display: flex;
-      justify-content: center;
-      gap: 25px;
-      margin: 50px 0;
-      flex-wrap: wrap;
-    }
-
-    .button {
-      padding: 14px 36px;
-      font-size: 1.1rem;
-      background-color: #2b2b2b;
-      color: white;
-      border: none;
-      border-radius: 30px;
+    .service-item {
+      padding: 52px 40px;
+      border-right: 1px solid var(--border);
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
+      text-decoration: none;
+      display: block;
     }
 
-    .button:hover {
-      background-color: #555;
+    .service-item:last-child { border-right: none; }
+
+    .service-item:hover {
+      background: var(--surface);
     }
 
-    footer {
+    .service-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--border);
+      display: block;
+      margin-bottom: 20px;
+      transition: color 0.3s;
+    }
+
+    .service-item:hover .service-num { color: var(--accent); }
+
+    .service-name {
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text);
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .service-desc {
+      font-size: 0.65rem;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .service-arrow {
+      display: block;
+      margin-top: 24px;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .service-item:hover .service-arrow { opacity: 1; }
+
+    /* ── PREVIEW ROW ── */
+    .preview-section {
+      padding: 80px 48px;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .preview-grid img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      display: block;
+      filter: brightness(0.9);
+      transition: filter 0.4s, transform 0.4s;
+    }
+
+    .preview-grid img:hover {
+      filter: brightness(1);
+      transform: scale(1.02);
+      z-index: 1;
+      position: relative;
+    }
+
+    .preview-cta {
       text-align: center;
-      padding: 20px 0;
-      color: #555;
-      background-color: #f3e9e1;
-      font-size: 0.9rem;
-      margin-top: auto;
+      margin-top: 48px;
     }
 
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .header-text h2 {
-        font-size: 2.2rem;
-      }
-
-      .header-image img {
-        margin-top: 25px;
-        max-width: 300px;
-      }
-
-      .button-container {
-        flex-direction: column;
-      }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-right { height: 50vw; }
+      .hero-left { padding: 60px 24px; }
+      .services-strip { grid-template-columns: 1fr; }
+      .service-item { border-right: none; border-bottom: 1px solid var(--border); }
+      .preview-grid { grid-template-columns: repeat(2, 1fr); }
+      .preview-section { padding: 60px 20px; }
     }
   </style>
 </head>
 <body>
   <nav>
-    <h1>Layna's Hair Salon</h1>x
+    <a href="index.html" class="logo">Layna's Hair Salon</a>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="book-online.html">Book Online</a></li>
-      <li><a href="about.html">About Me</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="book-online.html" class="nav-cta">Book Now</a></li>
     </ul>
   </nav>
 
-  <header>
-    <div class="header-text">
-      <h2>Layna’s Hair Salon</h2>
-      <p>I'll get u right ong.</p>
+  <section class="hero">
+    <div class="hero-left">
+      <span class="hero-eyebrow">Est. 2025 — Saint Clairsville, OH</span>
+      <h1 class="hero-title">
+        Hair<br>done<br><em>right.</em>
+      </h1>
+      <p class="hero-sub">
+        Precision cuts, color, and styling tailored to you. No compromise, no fuss — just results.
+      </p>
+      <div class="hero-actions">
+        <a href="book-online.html" class="btn btn-filled">Book Now</a>
+        <a href="portfolio.html" class="btn">View Work</a>
+      </div>
     </div>
-    <div class="header-image">
-      <img src="../images/style5.jpeg" alt="Salon Style">
+    <div class="hero-right">
+      <img src="../images/style5.jpeg" alt="Salon Style" />
     </div>
-  </header>
-
-  <section class="mission">
-    <h3>Our Mission</h3>
-    <p>blah blah </p>
   </section>
 
-  <div class="button-container">
-    <button class="button" onclick="window.location.href='book-online.html'">Book Online</button>
-    <button class="button" onclick="window.location.href='about.html'">About Me</button>
-    <button class="button" onclick="window.location.href='portfolio.html'">Portfolio</button>
-  </div>
+  <section class="services-strip">
+    <a class="service-item" href="book-online.html">
+      <span class="service-num">01</span>
+      <span class="service-name">Haircut</span>
+      <span class="service-desc">Precision cuts shaped to your face and lifestyle.</span>
+      <span class="service-arrow">Book →</span>
+    </a>
+    <a class="service-item" href="book-online.html">
+      <span class="service-num">02</span>
+      <span class="service-name">Hair Coloring</span>
+      <span class="service-desc">Full color, highlights, balayage — done with care.</span>
+      <span class="service-arrow">Book →</span>
+    </a>
+    <a class="service-item" href="book-online.html">
+      <span class="service-num">03</span>
+      <span class="service-name">Styling Session</span>
+      <span class="service-desc">Event-ready looks and everyday styling expertise.</span>
+      <span class="service-arrow">Book →</span>
+    </a>
+  </section>
+
+  <section class="preview-section">
+    <p class="section-label">Recent Work</p>
+    <div class="preview-grid">
+      <img src="../images/style1.jpeg" alt="Style 1" />
+      <img src="../images/style2.jpeg" alt="Style 2" />
+      <img src="../images/style3.jpeg" alt="Style 3" />
+    </div>
+    <div class="preview-cta">
+      <a href="portfolio.html" class="btn btn-accent">Full Portfolio</a>
+    </div>
+  </section>
 
   <footer>© 2025 Layna's Hair Salon</footer>
 </body>
