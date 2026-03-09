@@ -212,6 +212,9 @@
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="book-online.html" class="nav-cta">Book Now</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <section class="hero">
@@ -229,7 +232,7 @@
       </div>
     </div>
     <div class="hero-right">
-      <img src="/images/style5.jpeg" alt="Salon Style" />
+      <img src="images/style5.jpeg" alt="Salon Style" />
     </div>
   </section>
 
@@ -257,9 +260,9 @@
   <section class="preview-section">
     <p class="section-label">Recent Work</p>
     <div class="preview-grid">
-      <img src="/images/style1.jpeg" alt="Style 1" />
-      <img src="/images/style2.jpeg" alt="Style 2" />
-      <img src="/images/style3.jpeg" alt="Style 3" />
+      <img src="images/style1.jpeg" alt="Style 1" />
+      <img src="images/style2.jpeg" alt="Style 2" />
+      <img src="images/style3.jpeg" alt="Style 3" />
     </div>
     <div class="preview-cta">
       <a href="portfolio.html" class="btn btn-accent">Full Portfolio</a>
@@ -267,5 +270,20 @@
   </section>
 
   <footer>© 2025 Layna's Hair Salon</footer>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('nav ul');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navUl.classList.toggle('open');
+    });
+    // close when a link is clicked
+    navUl.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navUl.classList.remove('open');
+      });
+    });
+  </script>
 </body>
 </html>

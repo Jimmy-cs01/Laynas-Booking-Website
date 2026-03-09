@@ -66,11 +66,11 @@
     .lightbox-close:hover { color: var(--text); }
 
     @media (max-width: 768px) {
-      .gallery-grid { columns: 2; }
+      .gallery-grid { columns: 2; column-gap: 2px; }
     }
 
     @media (max-width: 480px) {
-      .gallery-grid { columns: 1; }
+      .gallery-grid { columns: 2; column-gap: 2px; }
     }
   </style>
 </head>
@@ -83,6 +83,9 @@
       <li><a href="portfolio.html" class="active">Portfolio</a></li>
       <li><a href="book-online.html" class="nav-cta">Book Now</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <div class="page-header">
@@ -96,7 +99,7 @@
   <script>
     // ── CONFIG: bump this number whenever you add more images ──
     const TOTAL_IMAGES = 25;
-    const IMAGE_DIR = '/images/';
+    const IMAGE_DIR = 'images/';
     // ──────────────────────────────────────────────────────────
 
     const gallery = document.getElementById('gallery');
@@ -133,6 +136,21 @@
     lbClose.addEventListener('click', () => lb.classList.remove('active'));
     lb.addEventListener('click', e => { if (e.target === lb) lb.classList.remove('active'); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('active'); });
+  </script>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('nav ul');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navUl.classList.toggle('open');
+    });
+    // close when a link is clicked
+    navUl.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navUl.classList.remove('open');
+      });
+    });
   </script>
 </body>
 </html>

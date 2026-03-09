@@ -108,11 +108,14 @@
       <li><a href="portfolio.html">Portfolio</a></li>
       <li><a href="book-online.html" class="nav-cta">Book Now</a></li>
     </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
   <div class="about-wrap">
     <div class="about-image">
-      <img src="/images/style4.jpeg" alt="Layna" />
+      <img src="images/style4.jpeg" alt="Layna" />
     </div>
     <div class="about-content">
       <span class="about-eyebrow">The Stylist</span>
@@ -139,5 +142,20 @@
   </div>
 
   <footer>© 2025 Layna's Hair Salon</footer>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('nav ul');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navUl.classList.toggle('open');
+    });
+    // close when a link is clicked
+    navUl.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navUl.classList.remove('open');
+      });
+    });
+  </script>
 </body>
 </html>
