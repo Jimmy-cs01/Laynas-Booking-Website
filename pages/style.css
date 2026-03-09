@@ -21,7 +21,7 @@
 
 body {
   font-family: var(--font-body);
-  background: var(--bg) url('../images/sitebg.jpeg') center center / cover fixed;
+  background: var(--bg) url('/images/sitebg.jpeg') center center / cover fixed;
   color: var(--text);
   min-height: 100vh;
   display: flex;
