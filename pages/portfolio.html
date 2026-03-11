@@ -8,15 +8,17 @@
   <style>
     .gallery-grid {
       padding: 0 2px 80px;
-      columns: 3;
-      column-gap: 2px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
     }
 
     .gallery-grid img {
       width: 100%;
+      height: 100%;
       display: block;
-      margin-bottom: 2px;
-      break-inside: avoid;
+      object-fit: cover;
+      aspect-ratio: 3 / 4;
       filter: brightness(0.88);
       transition: filter 0.4s ease, transform 0.4s ease;
       cursor: zoom-in;
@@ -66,11 +68,11 @@
     .lightbox-close:hover { color: var(--text); }
 
     @media (max-width: 768px) {
-      .gallery-grid { columns: 2; column-gap: 2px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 480px) {
-      .gallery-grid { columns: 2; column-gap: 2px; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     }
   </style>
 </head>
@@ -98,7 +100,7 @@
 
   <script>
     // ── CONFIG: bump this number whenever you add more images ──
-    const TOTAL_IMAGES = 25;
+    const TOTAL_IMAGES = 30;
     const IMAGE_DIR = 'images/';
     // ──────────────────────────────────────────────────────────
 
@@ -144,7 +146,6 @@
       hamburger.classList.toggle('open');
       navUl.classList.toggle('open');
     });
-    // close when a link is clicked
     navUl.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         hamburger.classList.remove('open');
