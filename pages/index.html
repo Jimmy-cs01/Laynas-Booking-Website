@@ -193,7 +193,7 @@
     }
 
     @media (max-width: 768px) {
-      /* ── HERO: stacked on mobile, no gradient overlay ── */
+      /* ── HERO: stacked on mobile, image full size ── */
       .hero {
         grid-template-columns: 1fr;
         min-height: auto;
@@ -205,7 +205,14 @@
       }
 
       .hero-right {
-        height: 65vw;
+        height: auto;
+        overflow: visible;
+      }
+
+      .hero-right img {
+        width: 100%;
+        height: auto;
+        object-fit: unset;
       }
 
       /* remove the left-fade gradient on mobile */
@@ -318,7 +325,6 @@
       hamburger.classList.toggle('open');
       navUl.classList.toggle('open');
     });
-    // close when a link is clicked
     navUl.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         hamburger.classList.remove('open');
