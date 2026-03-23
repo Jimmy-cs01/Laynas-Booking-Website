@@ -194,6 +194,11 @@
       gap: 2px;
     }
 
+    /* 4th image hidden on desktop, shown on mobile */
+    .preview-grid .mobile-only {
+      display: none;
+    }
+
     .preview-grid img {
       width: 100%;
       aspect-ratio: 1;
@@ -223,7 +228,12 @@
       .hero-right::after { display: none; }
       .services-banner { padding: 32px 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
       .about-banner { padding: 32px 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
-      .preview-grid { grid-template-columns: repeat(2, 1fr); }
+      .preview-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .preview-grid .mobile-only {
+        display: block;
+      }
       .preview-section { padding: 48px 16px; }
     }
   </style>
@@ -284,6 +294,7 @@
       <img src="images/style1.jpeg" alt="Style 1" />
       <img src="images/style2.jpeg" alt="Style 2" />
       <img src="images/style3.jpeg" alt="Style 3" />
+      <img src="images/style4.jpeg" alt="Style 4" class="mobile-only" />
     </div>
     <div class="preview-cta">
       <a href="portfolio.html" class="btn btn-accent">Full Portfolio</a>
