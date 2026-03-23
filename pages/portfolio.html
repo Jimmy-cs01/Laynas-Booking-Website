@@ -78,12 +78,15 @@
 </head>
 <body>
   <nav>
-    <a href="index.html" class="logo">Beauty by Layna</a>
+    <a href="home.html" class="logo">Beauty by Layna</a>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="home.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="portfolio.html" class="active">Portfolio</a></li>
-      <li><a href="book-online.html" class="nav-cta">Book Now</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li>
+        <a class="nav-cta" href="https://app.squareup.com/appointments/buyer/widget/ilxxm8exqeyrdu/LBKGD7WKE51YD">Book Now</a>
+      </li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -99,10 +102,8 @@
   <div class="gallery-grid" id="gallery"></div>
 
   <script>
-    // ── CONFIG: bump this number whenever you add more images ──
     const TOTAL_IMAGES = 30;
     const IMAGE_DIR = 'images/';
-    // ──────────────────────────────────────────────────────────
 
     const gallery = document.getElementById('gallery');
 
@@ -111,7 +112,6 @@
       img.src = `${IMAGE_DIR}style${i}.jpeg`;
       img.alt = `Hairstyle ${i}`;
       img.loading = 'lazy';
-      // silently drop any missing images so gaps don't appear
       img.onerror = function() { this.remove(); };
       img.addEventListener('click', () => {
         lbImg.src = img.src;

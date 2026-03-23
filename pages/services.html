@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services | Beauty by Layna</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .services-wrap {
+      padding: 0 48px 80px;
+    }
+
+    .services-category {
+      margin-bottom: 64px;
+    }
+
+    .category-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .category-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .service-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      gap: 24px;
+    }
+
+    .service-row:last-child {
+      border-bottom: none;
+    }
+
+    .service-info {
+      flex: 1;
+    }
+
+    .service-title {
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .service-description {
+      font-size: 0.65rem;
+      color: var(--muted);
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    .service-meta {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .service-price {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--text);
+      display: block;
+      line-height: 1;
+    }
+
+    .service-duration {
+      font-size: 0.55rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+      display: block;
+    }
+
+    .book-cta {
+      text-align: center;
+      padding: 64px 0 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .book-cta p {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 768px) {
+      .services-wrap { padding: 0 20px 60px; }
+      .service-row { flex-direction: column; gap: 8px; }
+      .service-meta { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="home.html" class="logo">Beauty by Layna</a>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="services.html" class="active">Services</a></li>
+      <li><a class="nav-cta" href="https://app.squareup.com/appointments/buyer/widget/ilxxm8exqeyrdu/LBKGD7WKE51YD">Book Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="page-header">
+    <h1>Services</h1>
+    <p>Pricing &amp; offerings</p>
+    <div class="accent-line"></div>
+  </div>
+
+  <div class="services-wrap">
+
+    <!-- COLOR -->
+    <div class="services-category">
+      <p class="category-label">Color</p>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Root Retouch</p>
+          <p class="service-description">Solid color root retouch. Not a blonding service. Includes 1 oz of color along with trim and style. Additional ounce is $10.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$80+</span>
+          <span class="service-duration">2 hr</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Toner Refresh</p>
+          <p class="service-description">All over toner, gloss, or glaze. Ideal for refreshing brassiness or tone between appointments. Doesn't include root smudge or haircut. 1 oz included, additional bowls $10.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$20</span>
+          <span class="service-duration">1 hr</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Full Color</p>
+          <p class="service-description">All over solid one color. Not a blonding service. 2 oz included, additional bowls $10.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$85+</span>
+          <span class="service-duration">2 hr</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Partial Foil</p>
+          <p class="service-description">Maintenance service. Includes foils from the ears up — lived in or highlights. Extra mixes may increase cost. 2 oz included, additional bowls $10.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$100+</span>
+          <span class="service-duration">3 hr</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Full Foil</p>
+          <p class="service-description">Full head of foils for blonding or lowlights. Includes root smudge and color glaze. Extra mixes may increase price. 2 oz included, additional bowls $10.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$130+</span>
+          <span class="service-duration">4 hr</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Full Foils &amp; Color</p>
+          <p class="service-description">Full foil with dimensional feel — highlights and lowlights with color between foils. Includes toner and 2 oz of color. Additional bowls $10.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$140</span>
+          <span class="service-duration">4 hr 30 min</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Hairline Foil</p>
+          <p class="service-description">Lightening around the hairline and face frame (money pieces). Includes 1–2 foils at each side of the part. 2 oz included, additional bowls $10.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$75</span>
+          <span class="service-duration">30 min</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Balayage</p>
+          <p class="service-description">Creates an all over blended, dimensional look. 2 oz included, additional bowls $10.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$130</span>
+          <span class="service-duration">4 hr</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Color Melt</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$145+</span>
+          <span class="service-duration">4 hr</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Smudge &amp; Tone</p>
+          <p class="service-description">Maintenance service to tone hair and give a refresh. Includes toner and 1 oz of color. Additional bowls $10.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$65</span>
+          <span class="service-duration">30 min</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Lightener Retouch</p>
+          <p class="service-description">Includes 2 oz of lightener. Additional ounce is $10.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$100</span>
+          <span class="service-duration">3 hr</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Vivid / Creative Custom Color</p>
+          <p class="service-description">$50 deposit required. Includes vivids, calicos, and all custom creative colors. Includes 5 oz of color with haircut and style. Additional ounce is $10.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$140</span>
+          <span class="service-duration">5 hr</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Color Correction</p>
+          <p class="service-description">Multiple processes or sessions — $50 deposit required. 4 oz included, additional bowls $10.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$150</span>
+          <span class="service-duration">4 hr 30 min</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Color Block</p>
+          <p class="service-description">Includes split dyes, color blocking, and halos. 3 oz included, additional ounces $10.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$125</span>
+          <span class="service-duration">4 hr</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Platinum Card</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$150</span>
+          <span class="service-duration">4 hr</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CUTS & STYLING -->
+    <div class="services-category">
+      <p class="category-label">Cuts &amp; Styling</p>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Women's Haircut, Wash &amp; Style</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$40</span>
+          <span class="service-duration">1 hr 30 min</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Women's Dry Cut</p>
+          <p class="service-description">Trims and dusting. Additional $5 for face framing.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$20</span>
+          <span class="service-duration">30 min</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Kids Cut</p>
+          <p class="service-description">For kids under age 10. Hair wash not included.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$15</span>
+          <span class="service-duration">30 min</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Bang Trim</p>
+          <p class="service-description">Quick trim to upkeep your bangs.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$5</span>
+          <span class="service-duration">15 min</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Wash &amp; Style</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$30</span>
+          <span class="service-duration">1 hr 15 min</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Formal Style / Updo</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$45</span>
+          <span class="service-duration">1 hr</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Bridal Updo / Formal Hair</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$55</span>
+          <span class="service-duration">1 hr</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD-ONS -->
+    <div class="services-category">
+      <p class="category-label">Add-Ons</p>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Cut with Color Service</p>
+          <p class="service-description">Cut added to any color or chemical service. Not a standalone service.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$20</span>
+          <span class="service-duration">1 hr</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Thinning Add-On</p>
+          <p class="service-description">Must be added to a haircut or color service. Not a standalone service.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$10</span>
+          <span class="service-duration">15 min</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Ounce of Color</p>
+          <p class="service-description">Add-on for color services.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$10</span>
+          <span class="service-duration">5 min</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Tinsel</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$5 / strand</span>
+          <span class="service-duration">30 min</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXTRAS -->
+    <div class="services-category">
+      <p class="category-label">Extras</p>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Eyebrow Wax</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$15</span>
+          <span class="service-duration">15 min</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Lip Wax</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$8</span>
+          <span class="service-duration">5 min</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Lash Lift &amp; Tint</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$65</span>
+          <span class="service-duration">1 hr</span>
+        </div>
+      </div>
+
+      <div class="service-row">
+        <div class="service-info">
+          <p class="service-title">Consultation</p>
+          <p class="service-description">Unsure what to book or how to achieve your goals? Book a consult and let's talk about it.</p>
+        </div>
+        <div class="service-meta">
+          <span class="service-price">$15</span>
+          <span class="service-duration">30 min</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="book-cta">
+      <p>Ready to book?</p>
+      <a class="btn btn-filled" href="https://app.squareup.com/appointments/buyer/widget/ilxxm8exqeyrdu/LBKGD7WKE51YD">Book an Appointment</a>
+    </div>
+
+  </div>
+
+  <footer>© 2025 Beauty by Layna</footer>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('nav ul');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navUl.classList.toggle('open');
+    });
+    navUl.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navUl.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -101,12 +101,15 @@
 </head>
 <body>
   <nav>
-    <a href="index.html" class="logo">Beauty by Layna</a>
+    <a href="home.html" class="logo">Beauty by Layna</a>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="home.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="book-online.html" class="nav-cta">Book Now</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li>
+        <a class="nav-cta" href="https://app.squareup.com/appointments/buyer/widget/ilxxm8exqeyrdu/LBKGD7WKE51YD">Book Now</a>
+      </li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -137,7 +140,7 @@
           <span class="stat-label">Satisfaction Rate</span>
         </div>
       </div>
-      <a href="book-online.html" class="btn btn-filled" style="align-self:flex-start;">Book an Appointment</a>
+      <a href="https://app.squareup.com/appointments/buyer/widget/ilxxm8exqeyrdu/LBKGD7WKE51YD" class="btn btn-filled" style="align-self:flex-start;">Book an Appointment</a>
     </div>
   </div>
 
@@ -149,7 +152,6 @@
       hamburger.classList.toggle('open');
       navUl.classList.toggle('open');
     });
-    // close when a link is clicked
     navUl.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         hamburger.classList.remove('open');

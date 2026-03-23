@@ -57,6 +57,7 @@
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
+      align-items: center;
     }
 
     .hero-right {
@@ -79,67 +80,88 @@
       background: linear-gradient(to right, var(--bg) 0%, transparent 20%);
     }
 
-    /* ── SERVICES STRIP ── */
-    .services-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    /* ── SERVICES BANNER ── */
+    .services-banner {
       border-top: 1px solid var(--border);
-    }
-
-    .service-item {
-      padding: 52px 40px;
-      border-right: 1px solid var(--border);
-      cursor: pointer;
-      transition: background 0.3s;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 48px;
       text-decoration: none;
-      display: block;
+      transition: background 0.3s;
     }
 
-    .service-item:last-child { border-right: none; }
+    .services-banner:hover { background: var(--surface); }
 
-    .service-item:hover {
-      background: var(--surface);
+    .services-banner-left {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .service-num {
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      font-weight: 300;
-      color: var(--border);
-      display: block;
-      margin-bottom: 20px;
-      transition: color 0.3s;
-    }
-
-    .service-item:hover .service-num { color: var(--accent); }
-
-    .service-name {
+    .services-banner-eyebrow {
       font-size: 0.6rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--text);
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    .service-desc {
-      font-size: 0.65rem;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .service-arrow {
-      display: block;
-      margin-top: 24px;
-      font-size: 0.6rem;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.25em;
       text-transform: uppercase;
       color: var(--accent);
-      opacity: 0;
-      transition: opacity 0.3s;
     }
 
-    .service-item:hover .service-arrow { opacity: 1; }
+    .services-banner-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      font-weight: 300;
+      color: var(--text);
+      letter-spacing: 0.05em;
+    }
+
+    .services-banner-arrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .about-banner {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 48px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .about-banner:hover { background: var(--surface); }
+
+    .about-banner-left {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .about-banner-eyebrow {
+      font-size: 0.6rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .about-banner-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      font-weight: 300;
+      color: var(--text);
+      letter-spacing: 0.05em;
+    }
+
+    .about-banner-arrow {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
 
     /* ── PREVIEW ROW ── */
     .preview-section {
@@ -193,72 +215,26 @@
     }
 
     @media (max-width: 768px) {
-      /* ── HERO: stacked on mobile, image full size ── */
-      .hero {
-        grid-template-columns: 1fr;
-        min-height: auto;
-        padding-top: 56px;
-      }
-
-      .hero-left {
-        padding: 48px 24px 32px;
-      }
-
-      .hero-right {
-        height: auto;
-        overflow: visible;
-      }
-
-      .hero-right img {
-        width: 100%;
-        height: auto;
-        object-fit: unset;
-      }
-
-      /* remove the left-fade gradient on mobile */
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 56px; }
+      .hero-left { padding: 48px 24px 32px; }
+      .hero-right { height: auto; overflow: visible; }
+      .hero-right img { width: 100%; height: auto; object-fit: unset; }
       .hero-right::after { display: none; }
-
-      /* ── SERVICES: horizontal scroll on mobile ── */
-      .services-strip {
-        display: flex;
-        flex-direction: row;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch;
-        border-top: 1px solid var(--border);
-        scrollbar-width: none;
-      }
-
-      .services-strip::-webkit-scrollbar { display: none; }
-
-      .service-item {
-        flex: 0 0 72vw;
-        scroll-snap-align: start;
-        border-right: 1px solid var(--border);
-        border-bottom: none;
-        padding: 36px 28px;
-      }
-
-      .service-arrow { opacity: 1; }
-
-      /* ── PREVIEW: 2 col on mobile ── */
+      .services-banner { padding: 32px 24px; flex-direction: column; align-items: flex-start; gap: 16px; }
       .preview-grid { grid-template-columns: repeat(2, 1fr); }
       .preview-section { padding: 48px 16px; }
-    }
-
-    @media (max-width: 400px) {
-      .service-item { flex: 0 0 85vw; }
     }
   </style>
 </head>
 <body>
   <nav>
-    <a href="index.html" class="logo">Beauty by Layna</a>
+    <a href="home.html" class="logo">Beauty by Layna</a>
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="home.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="book-online.html" class="nav-cta">Book Now</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a class="nav-cta" href="https://app.squareup.com/appointments/buyer/widget/ilxxm8exqeyrdu/LBKGD7WKE51YD">Book Now</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -275,7 +251,7 @@
         Precision cuts, color, and styling tailored to you. No compromise, no fuss — just results.
       </p>
       <div class="hero-actions">
-        <a href="book-online.html" class="btn btn-filled">Book Now</a>
+        <a href="https://app.squareup.com/appointments/buyer/widget/ilxxm8exqeyrdu/LBKGD7WKE51YD" class="btn btn-filled">Book Now</a>
         <a href="portfolio.html" class="btn">View Work</a>
       </div>
     </div>
@@ -284,26 +260,21 @@
     </div>
   </section>
 
-  <section class="services-strip">
-    <a class="service-item" href="book-online.html">
-      <span class="service-num">01</span>
-      <span class="service-name">Haircut</span>
-      <span class="service-desc">Precision cuts shaped to your face and lifestyle.</span>
-      <span class="service-arrow">Book →</span>
-    </a>
-    <a class="service-item" href="book-online.html">
-      <span class="service-num">02</span>
-      <span class="service-name">Hair Coloring</span>
-      <span class="service-desc">Full color, highlights, balayage — done with care.</span>
-      <span class="service-arrow">Book →</span>
-    </a>
-    <a class="service-item" href="book-online.html">
-      <span class="service-num">03</span>
-      <span class="service-name">Styling Session</span>
-      <span class="service-desc">Event-ready looks and everyday styling expertise.</span>
-      <span class="service-arrow">Book →</span>
-    </a>
-  </section>
+  <a class="services-banner" href="services.html">
+    <div class="services-banner-left">
+      <span class="services-banner-eyebrow">Pricing &amp; Offerings</span>
+      <span class="services-banner-title">View All Services</span>
+    </div>
+    <span class="services-banner-arrow">See full list →</span>
+  </a>
+
+  <a class="about-banner" href="about.html">
+    <div class="about-banner-left">
+      <span class="about-banner-eyebrow">Meet the stylist</span>
+      <span class="about-banner-title">Learn More About Layna</span>
+    </div>
+    <span class="services-banner-arrow">See more →</span>
+  </a>
 
   <section class="preview-section">
     <p class="section-label">Recent Work</p>
