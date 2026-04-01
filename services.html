@@ -79,11 +79,38 @@
       line-height: 1;
     }
 
+    .service-price-sale {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      font-weight: 300;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+    }
+
+    .service-price-original {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-decoration: line-through;
+      display: block;
+      margin-top: 2px;
+    }
+
     .service-duration {
       font-size: 0.55rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--muted);
+      margin-top: 4px;
+      display: block;
+    }
+
+    .service-deposit {
+      font-size: 0.55rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
       margin-top: 4px;
       display: block;
     }
@@ -151,7 +178,7 @@
       <div class="service-row">
         <div class="service-info">
           <p class="service-title">Toner Refresh</p>
-          <p class="service-description">All over toner, gloss, or glaze. Ideal for refreshing brassiness or tone between appointments. Doesn't include root smudge or haircut. 1 oz included, additional bowls $10.</p>
+          <p class="service-description">All over toner, gloss, or glaze. Ideal for refreshing brassiness or tone between appointments. Doesn't include root smudge or haircut. 1 oz included. Additional bowls $10.</p>
         </div>
         <div class="service-meta">
           <span class="service-price">$20</span>
@@ -162,10 +189,11 @@
       <div class="service-row">
         <div class="service-info">
           <p class="service-title">Full Color</p>
-          <p class="service-description">All over solid one color. Not a blonding service. 2 oz included, additional bowls $10.</p>
+          <p class="service-description">All over solid one color. Not a blonding service. 2 oz included. Additional bowls $10.</p>
         </div>
         <div class="service-meta">
-          <span class="service-price">$85+</span>
+          <span class="service-price-sale">$70</span>
+          <span class="service-price-original">$85</span>
           <span class="service-duration">2 hr</span>
         </div>
       </div>
@@ -173,7 +201,7 @@
       <div class="service-row">
         <div class="service-info">
           <p class="service-title">Partial Foil</p>
-          <p class="service-description">Maintenance service. Includes foils from the ears up — lived in or highlights. Extra mixes may increase cost. 2 oz included, additional bowls $10.</p>
+          <p class="service-description">Maintenance service. Includes foils from the ears up — lived in or highlights. Extra mixes may increase cost. 2 oz included. Additional bowls $10.</p>
         </div>
         <div class="service-meta">
           <span class="service-price">$100+</span>
@@ -184,11 +212,13 @@
       <div class="service-row">
         <div class="service-info">
           <p class="service-title">Full Foil</p>
-          <p class="service-description">Full head of foils for blonding or lowlights. Includes root smudge and color glaze. Extra mixes may increase price. 2 oz included, additional bowls $10.</p>
+          <p class="service-description">Full head of foils for blonding or lowlights. Includes root smudge and toner. Extra mixes may increase price. 2 oz included. Additional bowls $10.</p>
         </div>
         <div class="service-meta">
-          <span class="service-price">$130+</span>
+          <span class="service-price-sale">$100</span>
+          <span class="service-price-original">$130</span>
           <span class="service-duration">4 hr</span>
+          <span class="service-deposit">$50 deposit required</span>
         </div>
       </div>
 
@@ -200,13 +230,14 @@
         <div class="service-meta">
           <span class="service-price">$140</span>
           <span class="service-duration">4 hr 30 min</span>
+          <span class="service-deposit">$50 deposit required</span>
         </div>
       </div>
 
       <div class="service-row">
         <div class="service-info">
           <p class="service-title">Hairline Foil</p>
-          <p class="service-description">Lightening around the hairline and face frame (money pieces). Includes 1–2 foils at each side of the part. 2 oz included, additional bowls $10.</p>
+          <p class="service-description">Lightening around the hairline and face frame (money pieces). Includes 1–2 foils at each side of the part. 2 oz included. Additional bowls $10.</p>
         </div>
         <div class="service-meta">
           <span class="service-price">$75</span>
@@ -217,11 +248,12 @@
       <div class="service-row">
         <div class="service-info">
           <p class="service-title">Balayage</p>
-          <p class="service-description">Creates an all over blended, dimensional look. 2 oz included, additional bowls $10.</p>
+          <p class="service-description">Creates an all over blended, dimensional look. 2 oz included. Additional bowls $10.</p>
         </div>
         <div class="service-meta">
           <span class="service-price">$130</span>
           <span class="service-duration">4 hr</span>
+          <span class="service-deposit">$50 deposit required</span>
         </div>
       </div>
 
@@ -230,8 +262,9 @@
           <p class="service-title">Color Melt</p>
         </div>
         <div class="service-meta">
-          <span class="service-price">$145+</span>
+          <span class="service-price">$130</span>
           <span class="service-duration">4 hr</span>
+          <span class="service-deposit">$50 deposit required</span>
         </div>
       </div>
 
@@ -242,7 +275,7 @@
         </div>
         <div class="service-meta">
           <span class="service-price">$65</span>
-          <span class="service-duration">30 min</span>
+          <span class="service-duration">1 hr 15 min</span>
         </div>
       </div>
 
@@ -260,33 +293,36 @@
       <div class="service-row">
         <div class="service-info">
           <p class="service-title">Vivid / Creative Custom Color</p>
-          <p class="service-description">$50 deposit required. Includes vivids, calicos, and all custom creative colors. Includes 5 oz of color with haircut and style. Additional ounce is $10.</p>
+          <p class="service-description">Includes vivids, calicos, and all custom creative colors. Includes 5 oz of color with haircut and style. Additional ounce is $10.</p>
         </div>
         <div class="service-meta">
           <span class="service-price">$140</span>
           <span class="service-duration">5 hr</span>
+          <span class="service-deposit">$50 deposit required</span>
         </div>
       </div>
 
       <div class="service-row">
         <div class="service-info">
           <p class="service-title">Color Correction</p>
-          <p class="service-description">Multiple processes or sessions — $50 deposit required. 4 oz included, additional bowls $10.</p>
+          <p class="service-description">Multiple processes or sessions. 4 oz included. Additional bowls $10.</p>
         </div>
         <div class="service-meta">
           <span class="service-price">$150</span>
           <span class="service-duration">4 hr 30 min</span>
+          <span class="service-deposit">$50 deposit required</span>
         </div>
       </div>
 
       <div class="service-row">
         <div class="service-info">
           <p class="service-title">Color Block</p>
-          <p class="service-description">Includes split dyes, color blocking, and halos. 3 oz included, additional ounces $10.</p>
+          <p class="service-description">Includes split dyes, color blocking, and halos. 3 oz included. Additional ounces $10.</p>
         </div>
         <div class="service-meta">
           <span class="service-price">$125</span>
           <span class="service-duration">4 hr</span>
+          <span class="service-deposit">$50 deposit required</span>
         </div>
       </div>
 
@@ -297,6 +333,7 @@
         <div class="service-meta">
           <span class="service-price">$150</span>
           <span class="service-duration">4 hr</span>
+          <span class="service-deposit">$50 deposit required</span>
         </div>
       </div>
     </div>
@@ -321,7 +358,7 @@
           <p class="service-description">Trims and dusting. Additional $5 for face framing.</p>
         </div>
         <div class="service-meta">
-          <span class="service-price">$20</span>
+          <span class="service-price">$30</span>
           <span class="service-duration">30 min</span>
         </div>
       </div>
@@ -436,7 +473,8 @@
           <p class="service-title">Eyebrow Wax</p>
         </div>
         <div class="service-meta">
-          <span class="service-price">$15</span>
+          <span class="service-price-sale">$10</span>
+          <span class="service-price-original">$15</span>
           <span class="service-duration">15 min</span>
         </div>
       </div>
@@ -480,7 +518,7 @@
 
   </div>
 
-  <footer>© 2025 Beauty by Layna</footer>
+  <footer>© 2026 Beauty by Layna</footer>
   <script>
     const hamburger = document.getElementById('hamburger');
     const navUl = document.querySelector('nav ul');
