@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salon Policies | Beauty by Layna</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="index.html" class="logo">Beauty by Layna</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="policies.html" class="active">Policies</a></li>
+      <li><a class="nav-cta" href="https://app.squareup.com/appointments/buyer/widget/ilxxm8exqeyrdu/LBKGD7WKE51YD">Book Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <header class="page-header">
+    <h1>Salon Policies</h1>
+    <p>Please review before booking your appointment</p>
+    <div class="accent-line"></div>
+  </header>
+
+  <main class="policies-main">
+    <section class="policies-intro" aria-labelledby="policies-overview">
+      <p id="policies-overview">
+        Thank you for choosing us for your hair services. Please read the policies below before booking your appointment.
+      </p>
+    </section>
+
+    <section class="policies-list" aria-label="Salon policy details">
+      <article class="policy-item">
+        <h2 class="policy-item-title">1. Payments</h2>
+        <p class="policy-item-text">We accept cash and card payments. Card transactions may include an additional processing fee depending on the booking/payment system used.</p>
+      </article>
+
+      <article class="policy-item">
+        <h2 class="policy-item-title">2. Rescheduling</h2>
+        <p class="policy-item-text">Clients may reschedule their appointment at least 48 hours before their scheduled time. Please contact us as soon as possible if you need to move your appointment.</p>
+      </article>
+
+      <article class="policy-item">
+        <h2 class="policy-item-title">3. Cancellations</h2>
+        <p class="policy-item-text">If you need to cancel, please do so at least 48 hours before your appointment. This helps us keep the schedule fair and allows another client the opportunity to book.</p>
+      </article>
+
+      <article class="policy-item">
+        <h2 class="policy-item-title">4. No Call / No Shows</h2>
+        <p class="policy-item-text">If you miss your appointment without notice, you may be required to contact us before booking again.</p>
+      </article>
+
+      <article class="policy-item">
+        <h2 class="policy-item-title">5. Late Arrivals</h2>
+        <p class="policy-item-text">Clients are given a 10-minute grace period. If you arrive more than 10 minutes late, your appointment may need to be rescheduled.</p>
+      </article>
+
+      <article class="policy-item">
+        <h2 class="policy-item-title">6. Deposits</h2>
+        <p class="policy-item-text">Deposits are non-refundable and go toward the total cost of your service. Deposits may be required for certain appointments, including longer services, color services, extensions, or new client bookings.</p>
+      </article>
+
+      <article class="policy-item">
+        <h2 class="policy-item-title">7. Service Changes</h2>
+        <p class="policy-item-text">Please book the correct service when scheduling. Major changes, such as adding color, highlights, treatments, or extra styling, may not be available at the time of your appointment if enough time was not reserved.</p>
+      </article>
+
+      <article class="policy-item">
+        <h2 class="policy-item-title">8. Hair Prep</h2>
+        <p class="policy-item-text">Please arrive with hair properly detangled and ready for service unless your appointment includes a wash, blowout, or prep service. Extra detangling, product buildup removal, or additional prep may result in an extra charge.</p>
+      </article>
+
+      <article class="policy-item">
+        <h2 class="policy-item-title">9. Refunds and Adjustments</h2>
+        <p class="policy-item-text">All services are final. If you have a concern with your hair, please contact us within 48 hours so we can discuss an adjustment if needed. Refunds are not guaranteed.</p>
+      </article>
+    </section>
+
+    <section class="policies-note" aria-label="Additional policy note">
+      <p>We understand that emergencies happen and will do our best to accommodate unforeseen circumstances. However, these policies are enforced to respect everyone’s time and keep scheduling fair for all clients.</p>
+      <p>Thank you for your understanding and cooperation.</p>
+      <div class="policies-actions">
+        <a class="btn btn-filled" href="https://app.squareup.com/appointments/buyer/widget/ilxxm8exqeyrdu/LBKGD7WKE51YD">Back to Booking</a>
+        <a class="btn" href="services.html">View Services</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Beauty by Layna</footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navUl = document.querySelector('nav ul');
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navUl.classList.toggle('open');
+    });
+    navUl.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navUl.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
