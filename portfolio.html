@@ -112,24 +112,27 @@
   <div class="gallery-grid" id="gallery"></div>
 
   <script>
-    const TOTAL_IMAGES = 34;
-    const IMAGE_DIR = 'images/';
+const IMAGE_DIR = 'images/';
+const TOTAL_STYLES = 65; // update this number whenever you add/remove photos
 
-    const gallery = document.getElementById('gallery');
+const gallery = document.getElementById('gallery');
 
-    for (let i = 1; i <= TOTAL_IMAGES; i++) {
-      const img = document.createElement('img');
-      img.src = `${IMAGE_DIR}style${i}.jpeg`;
-      img.alt = `Hairstyle ${i}`;
-      img.loading = 'lazy';
-      img.onerror = function() { this.remove(); };
-      img.addEventListener('click', () => {
-        lbImg.src = img.src;
-        lbImg.alt = img.alt;
-        lb.classList.add('active');
-      });
-      gallery.appendChild(img);
-    }
+for (let i = 1; i <= TOTAL_STYLES; i++) {
+  const img = document.createElement('img');
+  img.src = `${IMAGE_DIR}style${i}.jpeg`;
+  img.alt = `Hairstyle ${i}`;
+  img.loading = 'lazy';
+
+  img.addEventListener('click', () => {
+    lbImg.src = img.src;
+    lbImg.alt = img.alt;
+    lb.classList.add('active');
+  });
+
+  gallery.appendChild(img);
+}
+
+    loadImage(1, 0);
   </script>
 
   <!-- Lightbox -->
