@@ -1,6 +1,6 @@
 # Beauty by Layna
 
-The site uses plain HTML, CSS and JavaScript. The local migration prepares Cloudflare Workers Static Assets and D1 to serve the site, public reviews at `/reviews`, and owner moderation at `/admin`.
+The site uses plain HTML, CSS and JavaScript. Cloudflare Workers Static Assets and D1 serve the site, public reviews at `/reviews`, and owner moderation at `/admin`.
 
 ## Local development
 
@@ -34,4 +34,4 @@ The suite bundles the standalone Worker with Wrangler, tests the API in workerd 
 
 `dist/` is the public asset allowlist. The Worker entry point, D1 migrations and runtime secrets sit outside it. Wrangler bundles server code separately.
 
-See the [Workers migration report](docs/WORKERS_MIGRATION.md) for D1 and secret setup, deployment commands, GitHub Actions, DNS, cutover, rollback, and verification results. See the [Phase 1 reference](docs/PHASE_1.md) for the review API and security model.
+See the [production migration report](docs/PRODUCTION_MIGRATION.md) for the deployed resources, DNS, CI/CD verification and rollback status. The [Workers migration guide](docs/WORKERS_MIGRATION.md) covers local development, D1 and secret setup, and deployment commands. The [Phase 1 reference](docs/PHASE_1.md) describes the review API and security model.
