@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Read client experiences at Beauty by Layna and share your own salon visit.">
+  <title>Client Reviews | Beauty by Layna</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/reviews.css">
+  <script type="module" src="/assets/reviews.js"></script>
+</head>
+<body class="reviews-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <nav aria-label="Main navigation">
+    <a href="/" class="logo">Beauty by Layna</a>
+    <ul id="main-navigation">
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/about.html">About</a></li>
+      <li><a href="/portfolio.html">Portfolio</a></li>
+      <li><a href="/services.html">Services</a></li>
+      <li><a href="/policies.html">Policies</a></li>
+      <li><a href="/reviews" class="active" aria-current="page">Reviews</a></li>
+      <li><a class="nav-cta" href="https://app.squareup.com/appointments/buyer/widget/ilxxm8exqeyrdu/LBKGD7WKE51YD">Book Now</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="main-navigation"><span></span><span></span><span></span></button>
+  </nav>
+  <header class="page-header">
+    <h1>Client Reviews</h1>
+    <p>Your hair, your experience, your words</p>
+    <div class="accent-line"></div>
+  </header>
+  <main id="main" class="reviews-main">
+    <p class="reviews-intro">From a fresh cut to a color transformation, every visit is personal. Read what clients have shared about their time in Layna's chair, or tell us about your own experience.</p>
+    <div class="reviews-layout">
+      <section aria-labelledby="reviews-heading">
+        <div class="section-heading"><h2 id="reviews-heading">In our clients' words</h2><a class="text-link" href="#leave-review">Leave a review</a></div>
+        <div id="review-stats" class="review-summary" hidden></div>
+        <p id="reviews-message" class="message" role="status" aria-live="polite">Loading client reviews…</p>
+        <button type="button" id="retry-reviews" class="btn" hidden>Try again</button>
+        <div id="review-list" class="review-grid" aria-live="polite"></div>
+        <button type="button" id="load-more" class="btn" hidden>Load more reviews</button>
+      </section>
+      <section id="leave-review" class="review-panel" aria-labelledby="form-heading">
+        <h2 id="form-heading">Leave a review</h2>
+        <p>We'd love to hear how you felt leaving the salon. Every review is read before it appears here.</p>
+        <p class="form-note">Your name and review will be public if approved. Please leave out contact details and other private information. All fields are required except the title.</p>
+        <form id="review-form" method="post" action="/reviews">
+          <label for="client-name">Client name <span class="field-hint">2–80 characters</span></label>
+          <input id="client-name" name="client_name" type="text" autocomplete="name" required minlength="2" maxlength="80">
+          <fieldset class="rating-field"><legend>Star rating</legend>
+            <div class="star-selector">
+              <label><input type="radio" name="rating" value="1" required><span aria-hidden="true">★</span><span class="sr-only">1 star</span></label>
+              <label><input type="radio" name="rating" value="2"><span aria-hidden="true">★</span><span class="sr-only">2 stars</span></label>
+              <label><input type="radio" name="rating" value="3"><span aria-hidden="true">★</span><span class="sr-only">3 stars</span></label>
+              <label><input type="radio" name="rating" value="4"><span aria-hidden="true">★</span><span class="sr-only">4 stars</span></label>
+              <label><input type="radio" name="rating" value="5"><span aria-hidden="true">★</span><span class="sr-only">5 stars</span></label>
+            </div>
+            <p id="rating-label" class="field-hint">Choose 1–5 stars. Use arrow keys to change your selection.</p>
+          </fieldset>
+          <label for="review-title">Review title <span class="field-hint">Optional, up to 120 characters</span></label>
+          <input id="review-title" name="title" type="text" maxlength="120">
+          <label for="review-text">Your review <span class="field-hint">20–3,000 characters</span></label>
+          <textarea id="review-text" name="review_text" rows="7" required minlength="20" maxlength="3000" aria-describedby="review-guidance"></textarea>
+          <p id="review-guidance" class="field-hint">Share your own experience in at least 20 characters.</p>
+          <div class="honeypot" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+          <button type="submit" class="btn btn-filled">Submit review</button>
+        </form>
+        <p id="form-message" class="message" role="status" aria-live="polite"></p>
+      </section>
+    </div>
+    <noscript><p class="message">Please enable JavaScript to read and submit reviews.</p></noscript>
+  </main>
+  <footer>© 2026 Beauty by Layna</footer>
+</body>
+</html>

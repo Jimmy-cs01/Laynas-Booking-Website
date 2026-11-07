@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "beauty-by-layna-local",
+  "main": "./worker.js",
+  "compatibility_date": "2026-11-06",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "secrets": {
+    "required": ["ADMIN_PASSWORD_HASH", "SESSION_SECRET"]
+  },
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": ["/api", "/api/*", "/admin", "/admin/*", "/admin.html"]
+  },
+  "d1_databases": [{
+    "binding": "REVIEWS_DB",
+    "database_name": "beauty-by-layna-reviews-local",
+    "database_id": "00000000-0000-0000-0000-000000000000",
+    "migrations_dir": "migrations"
+  }]
+}

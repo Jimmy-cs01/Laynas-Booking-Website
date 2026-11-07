@@ -21,7 +21,7 @@
 
 body {
   font-family: var(--font-body);
-  background: var(--bg) url('images/sitebg.jpeg') center center / cover fixed;
+  background: var(--bg);
   color: var(--text);
   min-height: 100vh;
   display: flex;
@@ -292,7 +292,7 @@ footer {
   .policies-note { padding: 24px 0; }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 1100px) {
   nav ul { display: none; }
 }
 
@@ -320,7 +320,7 @@ footer {
 .hamburger.open span:nth-child(2) { opacity: 0; }
 .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-@media (max-width: 560px) {
+@media (max-width: 1100px) {
   .hamburger { display: flex; }
 
   nav ul {

@@ -1,0 +1,4 @@
+# LOCAL DEVELOPMENT ONLY. Generate each value using npm run admin:password.
+# Never reuse production credentials locally or in previews.
+ADMIN_PASSWORD_HASH="REPLACE_WITH_GENERATED_HASH"
+SESSION_SECRET="REPLACE_WITH_GENERATED_RANDOM_SECRET"
