@@ -11,8 +11,9 @@ for (const script of scripts) {
   const result = spawnSync(process.execPath, ['--check', script], { encoding: 'utf8' });
   if (result.status !== 0) { failed = true; console.error(result.stderr); }
 }
-for (const file of ['index.html', 'about.html', 'portfolio.html', 'services.html', 'policies.html', 'reviews.html']) {
+for (const file of ['index.html', 'about.html', 'portfolio.html', 'services.html', 'policies.html', 'reviews.html', 'gift-cards.html']) {
   const html = await readFile(file, 'utf8');
+  if (!html.includes('href="/gift-cards"')) { failed = true; console.error(`${file}: missing Gift Cards navigation link`); }
   if (!html.includes('href="/reviews"')) { failed = true; console.error(`${file}: missing Reviews navigation link`); }
 }
 if (failed) process.exit(1);

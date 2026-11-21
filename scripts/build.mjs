@@ -8,7 +8,7 @@ await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 // Explicit allowlist: never publish secrets, migrations, tests or server source.
 for (const name of ['index.html', 'about.html', 'portfolio.html', 'services.html',
-  'policies.html', 'reviews.html', 'style.css', 'reviews.css', '_headers']) {
+  'policies.html', 'reviews.html', 'gift-cards.html', 'style.css', 'reviews.css', 'gift-cards.css', '_headers']) {
   await copyFile(path.join(root, name), path.join(output, name));
 }
 await cp(path.join(root, 'assets'), path.join(output, 'assets'), { recursive: true });

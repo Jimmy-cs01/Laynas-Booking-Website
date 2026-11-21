@@ -62,10 +62,11 @@ test('existing pages and booking integration are preserved; private files are no
   const html = await readFile('dist/services.html', 'utf8');
   assert.equal((html.match(/class="service-row"/g) || []).length, 31);
   const square = 'https://app.squareup.com/appointments/buyer/widget/ilxxm8exqeyrdu/LBKGD7WKE51YD';
-  for (const file of ['index', 'about', 'portfolio', 'services', 'policies', 'reviews']) {
+  for (const file of ['index', 'about', 'portfolio', 'services', 'policies', 'reviews', 'gift-cards']) {
     const source = await readFile(`dist/${file}.html`, 'utf8');
     assert.ok(source.includes(square), `${file} Square booking link`);
     assert.ok(source.includes('href="/reviews"'), `${file} Reviews link`);
+    assert.ok(source.includes('href="/gift-cards"'), `${file} Gift Cards link`);
   }
   const files = await readdir('dist');
   for (const privateFile of ['lib', 'worker.js', '.dev.vars', 'wrangler.local.jsonc', 'migrations', 'admin.html', 'package.json', 'tests']) assert.ok(!files.includes(privateFile));

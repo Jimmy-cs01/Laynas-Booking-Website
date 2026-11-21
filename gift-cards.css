@@ -1,0 +1,23 @@
+/* This page extends the current production design without changing other pages. */
+.gift-cards-page main { flex: 1; }
+.gift-cards-page .page-header { padding-bottom: 36px; }
+.gift-cards-page .page-header .gift-eyebrow { color: var(--accent); margin: 0 0 24px; }
+.gift-cards-page .page-header h1 { max-width: 960px; margin: 0 auto; font-size: clamp(2.4rem, 5vw, 4rem); line-height: 1.2; letter-spacing: .08em; }
+.gift-content { max-width: 760px; margin: 0 auto; padding: 0 48px 96px; text-align: center; }
+.gift-description { font-size: 1rem; line-height: 1.9; color: var(--muted); }
+.gift-purchase { margin-top: 32px; min-height: 48px; padding: 16px 28px; font-size: .875rem; line-height: 1.5; letter-spacing: .12em; color: var(--bg); }
+.gift-purchase:hover { color: var(--bg); }
+.gift-note { margin-top: 20px; font-size: .8rem; line-height: 1.8; color: var(--muted); }
+.gift-cards-page :focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.gift-cards-page .gift-purchase:focus-visible { outline-color: var(--text); }
+.gift-cards-page .skip-link { position: fixed; top: -100px; left: 16px; z-index: 300; padding: 12px; background: var(--text); color: var(--bg); }
+.gift-cards-page .skip-link:focus { top: 8px; }
+@media (max-width: 600px) {
+  .gift-cards-page .page-header { padding: 120px 20px 32px; }
+  .gift-cards-page .page-header h1 { font-size: 2.4rem; letter-spacing: .06em; }
+  .gift-content { padding: 0 20px 64px; }
+  .gift-purchase { display: block; padding-inline: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gift-cards-page *, .gift-cards-page *::before, .gift-cards-page *::after { transition: none !important; }
+}
